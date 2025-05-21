@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #f5e7da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.paloma {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  animation: volar 5s forwards;
+}
+
+@keyframes volar {
+  to {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.carta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 150px;
+  background: #fff;
+  border: 2px solid #5c4033;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.7s ease;
+  z-index: 10;
+}
+
+.carta.mostrar {
+  opacity: 1;
+}
+
+.carta.abierta {
+  width: 500px; /* más ancho */
+  height: 400px; /* más alto */
+  transition: all 1s ease;
+}
+
+.tapa {
+  width: 100%;
+  height: 100%;
+  background: #d2b48c;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.papel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  left: 0;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow-y: auto; /* agrega scroll si hace falta */
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.carta.abierta .papel {
+  opacity: 1;
+}
+
+.dentro {
+  color: #5c4033;
+  font-size: 18px;
+  text-align: left;
+  white-space: pre-line;
+}
+
+
